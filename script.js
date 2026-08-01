@@ -317,9 +317,10 @@ if (contactForm) {
     submitBtn.style.pointerEvents = "none";
 
     emailjs.sendForm(
-      "service_k6ey25l",
-      "YOUR_TEMPLATE_ID",
-      this
+    "service_k6ey25l",
+    "template_jcj7mk5",
+    this
+     )
     ).then(() => {
 
       submitBtn.innerHTML =
