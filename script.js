@@ -303,7 +303,11 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ==========================================
      PREMIUM CONTACT FORM WORKFLOW
      ========================================== */
-  const contactForm = document.getElementById("contactForm");
+  /* ==========================================
+   EMAILJS CONTACT FORM
+========================================== */
+
+const contactForm = document.getElementById("contactForm");
 
 if (contactForm) {
   contactForm.addEventListener("submit", function (e) {
@@ -316,47 +320,45 @@ if (contactForm) {
       'Sending... <i class="ri-loader-4-line btn-icon ri-spin"></i>';
     submitBtn.style.pointerEvents = "none";
 
-    emailjs.sendForm(
-    "service_k6ey25l",
-    "template_jcj7mk5",
-    this
-     )
-    ).then(() => {
+    emailjs
+      .sendForm(
+        "service_k6ey25l",
+        "template_jcj7mk5",
+        this
+      )
+      .then(() => {
+        submitBtn.innerHTML =
+          'Message Sent! <i class="ri-checkbox-circle-line btn-icon"></i>';
 
-      submitBtn.innerHTML =
-        'Message Sent! <i class="ri-checkbox-circle-line btn-icon"></i>';
+        submitBtn.style.background =
+          "linear-gradient(135deg,#4CAF50,#2E7D32)";
 
-      submitBtn.style.background =
-        "linear-gradient(135deg,#4CAF50,#2E7D32)";
+        showNotification(
+          "Thank you! Your message has been sent successfully.",
+          "success"
+        );
 
-      showNotification(
-        "Thank you! Your message has been sent successfully.",
-        "success"
-      );
+        contactForm.reset();
 
-      contactForm.reset();
+        setTimeout(() => {
+          submitBtn.innerHTML = originalText;
+          submitBtn.style.background = "";
+          submitBtn.style.pointerEvents = "auto";
+        }, 3000);
+      })
+      .catch((error) => {
+        console.error(error);
 
-      setTimeout(() => {
         submitBtn.innerHTML = originalText;
-        submitBtn.style.background = "";
         submitBtn.style.pointerEvents = "auto";
-      }, 3000);
 
-    }).catch((error) => {
-
-      console.error(error);
-
-      submitBtn.innerHTML = originalText;
-      submitBtn.style.pointerEvents = "auto";
-
-      showNotification(
-        "Failed to send message. Please try again.",
-        "error"
-      );
-    });
+        showNotification(
+          "Failed to send message. Please try again.",
+          "error"
+        );
+      });
   });
 }
-  
   // Custom Floating Toast Notification
   const showNotification = (message, type = 'success') => {
     const toast = document.createElement('div');
