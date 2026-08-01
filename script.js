@@ -303,40 +303,58 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ==========================================
      PREMIUM CONTACT FORM WORKFLOW
      ========================================== */
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      const submitBtn = contactForm.querySelector('button[type="submit"]');
-      const originalText = submitBtn.innerHTML;
-      
-      // Visual feedback loading state
-      submitBtn.innerHTML = 'Sending... <i class="ri-loader-4-line btn-icon ri-spin"></i>';
-      submitBtn.style.pointerEvents = 'none';
-      
-      // Simulate form submission
+  const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+
+    submitBtn.innerHTML =
+      'Sending... <i class="ri-loader-4-line btn-icon ri-spin"></i>';
+    submitBtn.style.pointerEvents = "none";
+
+    emailjs.sendForm(
+      "service_k6ey25l",
+      "YOUR_TEMPLATE_ID",
+      this
+    ).then(() => {
+
+      submitBtn.innerHTML =
+        'Message Sent! <i class="ri-checkbox-circle-line btn-icon"></i>';
+
+      submitBtn.style.background =
+        "linear-gradient(135deg,#4CAF50,#2E7D32)";
+
+      showNotification(
+        "Thank you! Your message has been sent successfully.",
+        "success"
+      );
+
+      contactForm.reset();
+
       setTimeout(() => {
-        submitBtn.innerHTML = 'Message Sent! <i class="ri-checkbox-circle-line btn-icon"></i>';
-        submitBtn.style.background = 'linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%)';
-        submitBtn.style.border = '1px solid #4CAF50';
-        
-        // Show floating premium popup notification
-        showNotification('Thank you! Your message has been sent successfully.', 'success');
-        
-        contactForm.reset();
-        
-        // Restore button state after 3.5 seconds
-        setTimeout(() => {
-          submitBtn.innerHTML = originalText;
-          submitBtn.style.background = '';
-          submitBtn.style.border = '';
-          submitBtn.style.pointerEvents = 'auto';
-        }, 3500);
-        
-      }, 1500);
+        submitBtn.innerHTML = originalText;
+        submitBtn.style.background = "";
+        submitBtn.style.pointerEvents = "auto";
+      }, 3000);
+
+    }).catch((error) => {
+
+      console.error(error);
+
+      submitBtn.innerHTML = originalText;
+      submitBtn.style.pointerEvents = "auto";
+
+      showNotification(
+        "Failed to send message. Please try again.",
+        "error"
+      );
     });
-  }
+  });
+}
   
   // Custom Floating Toast Notification
   const showNotification = (message, type = 'success') => {
