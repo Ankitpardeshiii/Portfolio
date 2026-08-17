@@ -294,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (statsTriggered) return;
     statsTriggered = true;
     
-    animateCounter('stat-projects', 3);
+    animateCounter('stat-projects', 4);
     animateCounter('stat-opensource', 5);
     animateCounter('stat-tech', 12);
     animateCounter('stat-commits', 400, 2000);
