@@ -3,169 +3,274 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ankit Pardeshi | Data Science & AI Portfolio</title>
+  <title>Ankit Pardeshi | Data Science &amp; AI Portfolio</title>
   <meta name="description" content="Portfolio of Ankit Pardeshi — Data Science and AI student building intelligent systems through machine learning, data analysis, and real-world projects.">
 
-  <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts: Pixel Fonts (Press Start 2P, Silkscreen) + Clean Modern Fonts (Inter, Outfit) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- RemixIcon for premium icons -->
+  <!-- RemixIcon & Devicon -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
-  <!-- Devicon for tech logo badges -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-</head>
-<body>
 
-  <!-- Background Particles Canvas -->
+  <!-- Main Portfolio Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="mc-body">
+
+  <!-- Background XP Orbs Particles Canvas -->
   <canvas id="particle-canvas"></canvas>
 
-  <!-- Custom Cursor Elements -->
-  <div class="custom-cursor" id="cursor"></div>
-  <div class="custom-cursor-outline" id="cursor-outline"></div>
+  <!-- Custom Crosshair Cursor -->
+  <div class="mc-cursor" id="mc-cursor"></div>
 
   <!-- ==========================================
-       NAVBAR
+       TOP NAVIGATION BAR & HOTBAR HUD
        ========================================== -->
-  <header class="navbar" id="navbar">
-    <div class="container">
-      <a href="#home" class="nav-logo">ANKIT<span>.</span></a>
+  <header class="mc-navbar" id="navbar">
+    <div class="mc-nav-container">
+      <a href="#home" class="mc-nav-logo">
+        <span class="mc-block-icon">🟩</span>
+        <span class="mc-logo-text">ANKIT PARDESHI</span>
+      </a>
 
-      <!-- Desktop Navigation -->
-      <nav class="nav-menu" id="nav-menu">
-        <a href="#home"         class="nav-link active">Home</a>
-        <a href="#about"        class="nav-link">About</a>
-        <a href="#experience"   class="nav-link">Experience</a>
-        <a href="#skills"       class="nav-link">Skills</a>
-        <a href="#certificates" class="nav-link">Certificates</a>
-        <a href="#projects"     class="nav-link">Projects</a>
-        <a href="#contact"      class="nav-link">Contact</a>
+      <!-- Desktop Navigation Slots -->
+      <nav class="mc-nav-menu" id="nav-menu">
+        <a href="#home"         class="mc-nav-slot active" data-slot="1"><span class="mc-slot-num">1</span><i class="ri-compass-3-line"></i> Home</a>
+        <a href="#about"        class="mc-nav-slot" data-slot="2"><span class="mc-slot-num">2</span><i class="ri-user-4-line"></i> Profile</a>
+        <a href="#experience"   class="mc-nav-slot" data-slot="3"><span class="mc-slot-num">3</span><i class="ri-map-pin-line"></i> Journey</a>
+        <a href="#skills"       class="mc-nav-slot" data-slot="4"><span class="mc-slot-num">4</span><i class="ri-briefcase-line"></i> Inventory</a>
+        <a href="#certificates" class="mc-nav-slot" data-slot="5"><span class="mc-slot-num">5</span><i class="ri-award-line"></i> Advancements</a>
+        <a href="#projects"     class="mc-nav-slot" data-slot="6"><span class="mc-slot-num">6</span><i class="ri-archive-line"></i> Chests</a>
+        <a href="#contact"      class="mc-nav-slot" data-slot="7"><span class="mc-slot-num">7</span><i class="ri-message-3-line"></i> Contact</a>
       </nav>
 
-      <!-- Mobile Hamburger -->
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <!-- Right Controls: Audio SFX Toggle & Mobile Hamburger -->
+      <div class="mc-nav-actions">
+        <button class="mc-btn-icon" id="sfx-toggle" aria-label="Toggle Sound Effects" title="Toggle Sound Effects">
+          <i class="ri-volume-up-fill" id="sfx-icon"></i>
+        </button>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
 
   <!-- ==========================================
-       HERO SECTION
+       HERO SECTION — CINEMATIC LANDSCAPE
        ========================================== -->
-  <section class="hero" id="home">
+  <section class="mc-hero" id="home">
+    <!-- Voxel Cloud Animations -->
+    <div class="mc-clouds">
+      <div class="mc-cloud cloud-1"></div>
+      <div class="mc-cloud cloud-2"></div>
+      <div class="mc-cloud cloud-3"></div>
+    </div>
+
     <div class="container">
-      <div class="hero-grid">
+      <div class="mc-hero-wrapper">
 
-        <!-- Hero Text Content -->
-        <div class="hero-content reveal reveal-left">
-          <span class="hero-eyebrow">AI &amp; Data Science Student</span>
+        <!-- Left: Hero Text -->
+        <div class="mc-hero-content reveal reveal-left active">
+          <div class="mc-badge">
+            <span class="mc-emerald-sparkle">💎</span> DATA SCIENCE &amp; AI DEVELOPER
+          </div>
 
-          <h1 class="hero-title">I'm <span>Ankit Pardeshi</span></h1>
+          <h1 class="mc-hero-title">
+            <span class="mc-main-name">ANKIT PARDESHI</span>
+          </h1>
 
-          <div class="hero-subtitle">
-            <span>I'm a</span>
+          <div class="mc-hero-subtitle">
+            <span class="mc-class-label">CLASS:</span>
             <span class="typing-container" id="typing-text"></span>
           </div>
 
-          <p class="hero-tagline">
+          <p class="mc-hero-tagline">
             Building intelligent systems from data to deployment — through machine learning, exploratory analysis, and real-world projects that solve genuine problems.
           </p>
 
-          <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">View Projects <i class="ri-arrow-right-line btn-icon"></i></a>
-            <a href="#contact"  class="btn btn-secondary">Contact Me <i class="ri-mail-send-line btn-icon"></i></a>
+          <!-- Action Buttons (Block 3D Style) -->
+          <div class="mc-hero-actions">
+            <a href="#about" class="mc-btn mc-btn-primary">
+              <span class="mc-btn-text">VIEW PROFILE</span>
+              <i class="ri-arrow-down-line"></i>
+            </a>
+            <a href="#projects" class="mc-btn mc-btn-gold">
+              <span class="mc-btn-text">OPEN CHESTS</span>
+              <i class="ri-archive-line"></i>
+            </a>
           </div>
         </div>
 
-        <!-- Hero Image -->
-        <div class="hero-image-wrapper reveal reveal-right">
-          <div class="hero-image-glow-bg"></div>
-          <div class="hero-image-container">
-            <img src="photo.jpg" alt="Ankit Pardeshi — Data Science & AI Student" class="hero-image">
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       ABOUT SECTION
-       ========================================== -->
-  <section class="section" id="about">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-eyebrow">Biography</span>
-        <h2 class="section-title">About Me</h2>
-      </div>
-
-      <div class="about-grid">
-        <!-- About Text -->
-        <div class="about-text reveal reveal-left">
-          <h3>Unraveling complexity through <span>Data Science</span></h3>
-          <p>
-            I am an aspiring Data Scientist and Analyst with a deep-seated passion for converting raw, unstructured datasets into predictive intelligence. My journey is fueled by a curiosity for how machine learning and artificial intelligence can address challenging industry roadblocks.
-          </p>
-          <p>
-            With extensive involvement in open-source development programs, I enjoy writing clean, scalable Python scripts, collaborating across remote ecosystems, and learning next-generation mathematical modeling. I thrive on collaborative engineering and building data-driven products that deliver measurable, real-world value.
-          </p>
-        </div>
-
-        <!-- Stat Cards -->
-        <div class="about-stats reveal reveal-right">
-          <div class="stat-card glass-card">
-            <span class="stat-num" id="stat-projects">4</span>
-            <span class="stat-label">Projects Completed</span>
-          </div>
-          <div class="stat-card glass-card">
-            <span class="stat-num" id="stat-opensource">5+</span>
-            <span class="stat-label">Open Source Programs</span>
-          </div>
-          <div class="stat-card glass-card">
-            <span class="stat-num" id="stat-tech">12+</span>
-            <span class="stat-label">Technologies Learned</span>
-          </div>
-          <div class="stat-card glass-card">
-            <span class="stat-num" id="stat-commits">400+</span>
-            <span class="stat-label">GitHub Contributions</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==========================================
-       EXPERIENCE SECTION
-       ========================================== -->
-  <section class="section" id="experience">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-eyebrow">Milestones</span>
-        <h2 class="section-title">Experience</h2>
-      </div>
-
-      <!-- ======== FEATURED EXPERIENCE: Code Social ======== -->
-      <div class="featured-experience reveal">
-        <div class="featured-exp-card">
-          <div class="featured-exp-badge">
-            <i class="ri-briefcase-4-fill"></i> Featured Role
-          </div>
-
-          <div class="featured-exp-header">
-            <div>
-              <span class="featured-exp-company">Code Social</span>
-              <h3 class="featured-exp-role">Data Analyst</h3>
+        <!-- Right: Player Avatar & HUD Container -->
+        <div class="mc-hero-hud-card reveal reveal-right active">
+          <!-- Player Profile Box -->
+          <div class="mc-hud-frame">
+            <div class="mc-hud-header">
+              <div class="mc-hud-title">PLAYER STATS</div>
+              <div class="mc-hud-version">v2.0.26</div>
             </div>
-            <span class="featured-exp-date">2026</span>
+
+            <!-- Avatar Container -->
+            <div class="mc-hud-avatar-box">
+              <img src="photo.jpg" alt="Ankit Pardeshi — Data Science & AI Developer" class="mc-player-img">
+              <span class="mc-status-online"><i class="ri-checkbox-blank-circle-fill"></i> ONLINE</span>
+            </div>
+
+            <!-- Player Status Bars (Hearts, Hunger, Level, XP) -->
+            <div class="mc-hud-meters">
+              <!-- Hearts Row -->
+              <div class="mc-hud-row">
+                <span class="mc-hud-label">HEALTH</span>
+                <div class="mc-hearts">
+                  <span class="mc-heart">❤️</span><span class="mc-heart">❤️</span><span class="mc-heart">❤️</span><span class="mc-heart">❤️</span><span class="mc-heart">❤️</span>
+                  <span class="mc-heart">❤️</span><span class="mc-heart">❤️</span><span class="mc-heart">❤️</span><span class="mc-heart">❤️</span><span class="mc-heart">❤️</span>
+                </div>
+              </div>
+
+              <!-- Hunger Row -->
+              <div class="mc-hud-row">
+                <span class="mc-hud-label">STAMINA</span>
+                <div class="mc-hunger">
+                  <span class="mc-food">🍗</span><span class="mc-food">🍗</span><span class="mc-food">🍗</span><span class="mc-food">🍗</span><span class="mc-food">🍗</span>
+                  <span class="mc-food">🍗</span><span class="mc-food">🍗</span><span class="mc-food">🍗</span><span class="mc-food">🍗</span><span class="mc-food">🍗</span>
+                </div>
+              </div>
+
+              <!-- Level & XP Bar -->
+              <div class="mc-xp-section">
+                <div class="mc-xp-meta">
+                  <span class="mc-xp-level">LVL 20</span>
+                  <span class="mc-xp-text">EXP TO NEXT LEVEL: 400/400 XP</span>
+                </div>
+                <div class="mc-xp-bar">
+                  <div class="mc-xp-fill" id="hero-xp-fill" style="width: 90%;"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Terrain Pixel Border Divider -->
+    <div class="mc-terrain-divider"></div>
+  </section>
+
+  <!-- ==========================================
+       ABOUT SECTION — PLAYER PROFILE & VILLAGE SCENERY
+       ========================================== -->
+  <section class="mc-section mc-section-village" id="about">
+    <div class="container">
+      <div class="mc-section-header reveal">
+        <div class="mc-section-eyebrow"><i class="ri-user-3-fill"></i> CHARACTER DETAILS</div>
+        <h2 class="mc-section-title">PLAYER PROFILE</h2>
+      </div>
+
+      <div class="mc-about-grid">
+        <!-- Player Bio Scroll Box -->
+        <div class="mc-panel mc-scroll-panel reveal reveal-left">
+          <div class="mc-panel-header">
+            <span class="mc-panel-title">📜 BIOGRAPHY &amp; OBJECTIVES</span>
+            <span class="mc-panel-tag">AI / DATA SCIENCE</span>
           </div>
 
-          <div class="featured-exp-divider"></div>
+          <div class="mc-bio-body">
+            <h3>Unraveling complexity through <span class="mc-text-gold">Data Science</span></h3>
+            <p>
+              I am an aspiring Data Scientist and Analyst with a deep-seated passion for converting raw, unstructured datasets into predictive intelligence. My journey is fueled by a curiosity for how machine learning and artificial intelligence can address challenging industry roadblocks.
+            </p>
+            <p>
+              With extensive involvement in open-source development programs, I enjoy writing clean, scalable Python scripts, collaborating across remote ecosystems, and learning next-generation mathematical modeling. I thrive on collaborative engineering and building data-driven products that deliver measurable, real-world value.
+            </p>
+          </div>
+        </div>
 
-          <div class="featured-exp-grid">
-            <!-- Responsibilities -->
-            <ul class="featured-exp-list">
+        <!-- Stat Item Counters -->
+        <div class="mc-stats-grid reveal reveal-right">
+
+          <div class="mc-stat-box mc-slot-card">
+            <div class="mc-item-icon-wrap">
+              <span class="mc-item-emoji">📦</span>
+            </div>
+            <div class="mc-stat-info">
+              <span class="mc-stat-num" id="stat-projects">4</span>
+              <span class="mc-stat-label">Projects Completed</span>
+            </div>
+          </div>
+
+          <div class="mc-stat-box mc-slot-card">
+            <div class="mc-item-icon-wrap">
+              <span class="mc-item-emoji">🌐</span>
+            </div>
+            <div class="mc-stat-info">
+              <span class="mc-stat-num" id="stat-opensource">5+</span>
+              <span class="mc-stat-label">Open Source Programs</span>
+            </div>
+          </div>
+
+          <div class="mc-stat-box mc-slot-card">
+            <div class="mc-item-icon-wrap">
+              <span class="mc-item-emoji">📚</span>
+            </div>
+            <div class="mc-stat-info">
+              <span class="mc-stat-num" id="stat-tech">12+</span>
+              <span class="mc-stat-label">Technologies Learned</span>
+            </div>
+          </div>
+
+          <div class="mc-stat-box mc-slot-card">
+            <div class="mc-item-icon-wrap">
+              <span class="mc-item-emoji">⚡</span>
+            </div>
+            <div class="mc-stat-info">
+              <span class="mc-stat-num" id="stat-commits">400+</span>
+              <span class="mc-stat-label">GitHub Contributions</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       EXPERIENCE SECTION — MINECART JOURNEY TRACK
+       ========================================== -->
+  <section class="mc-section mc-section-dark" id="experience">
+    <div class="container">
+      <div class="mc-section-header reveal">
+        <div class="mc-section-eyebrow"><i class="ri-map-pin-2-fill"></i> PROGRESSION PATH</div>
+        <h2 class="mc-section-title">DEVELOPER JOURNEY</h2>
+      </div>
+
+      <!-- ======== FEATURED ROLE: COMMAND BLOCK / DIAMOND MILESTONE ======== -->
+      <div class="mc-featured-exp reveal">
+        <div class="mc-command-block">
+          <div class="mc-cb-badge">
+            <i class="ri-sparkling-2-fill"></i> FEATURED ROLE: DATA ANALYST
+          </div>
+
+          <div class="mc-cb-header">
+            <div>
+              <span class="mc-cb-company">Code Social</span>
+              <h3 class="mc-cb-role">Data Analyst</h3>
+            </div>
+            <span class="mc-cb-date">2026</span>
+          </div>
+
+          <div class="mc-cb-divider"></div>
+
+          <div class="mc-cb-grid">
+            <ul class="mc-cb-list">
               <li><i class="ri-checkbox-circle-fill"></i> Worked on data cleaning and preprocessing to prepare datasets for analysis.</li>
               <li><i class="ri-checkbox-circle-fill"></i> Performed exploratory data analysis to identify patterns, trends, and insights.</li>
               <li><i class="ri-checkbox-circle-fill"></i> Used Python, Pandas and NumPy for data analysis and manipulation.</li>
@@ -174,95 +279,118 @@
               <li><i class="ri-checkbox-circle-fill"></i> Applied data analysis techniques to convert raw data into meaningful insights.</li>
             </ul>
 
-            <!-- Tech Stack -->
-            <div class="featured-exp-stack">
-              <span class="featured-exp-stack-label">Technologies Used</span>
-              <div class="featured-exp-techs">
-                <span class="exp-tech-badge">Python</span>
-                <span class="exp-tech-badge">Pandas</span>
-                <span class="exp-tech-badge">NumPy</span>
-                <span class="exp-tech-badge">SQL</span>
-                <span class="exp-tech-badge">Matplotlib</span>
-                <span class="exp-tech-badge">Seaborn</span>
-                <span class="exp-tech-badge">Power BI</span>
+            <div class="mc-cb-stack">
+              <span class="mc-cb-stack-title">EQUIPPED STACK</span>
+              <div class="mc-cb-badges">
+                <span class="mc-tag">Python</span>
+                <span class="mc-tag">Pandas</span>
+                <span class="mc-tag">NumPy</span>
+                <span class="mc-tag">SQL</span>
+                <span class="mc-tag">Matplotlib</span>
+                <span class="mc-tag">Seaborn</span>
+                <span class="mc-tag">Power BI</span>
               </div>
 
-              <span class="featured-exp-stack-label" style="margin-top: 0.5rem;">Focus Areas</span>
-              <div class="featured-exp-techs">
-                <span class="exp-tech-badge">Data Cleaning</span>
-                <span class="exp-tech-badge">EDA</span>
-                <span class="exp-tech-badge">Visualization</span>
-                <span class="exp-tech-badge">Insights</span>
+              <span class="mc-cb-stack-title" style="margin-top: 1rem;">FOCUS AREAS</span>
+              <div class="mc-cb-badges">
+                <span class="mc-tag mc-tag-green">Data Cleaning</span>
+                <span class="mc-tag mc-tag-green">EDA</span>
+                <span class="mc-tag mc-tag-green">Visualization</span>
+                <span class="mc-tag mc-tag-green">Insights</span>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- ======== OTHER EXPERIENCES TIMELINE ======== -->
-      <div class="experience-timeline-label">Open Source Contributions</div>
+      <!-- ======== MINECART TRACK TIMELINE ======== -->
+      <div class="mc-track-header-label"><i class="ri-git-commit-line"></i> OPEN SOURCE CONTRIBUTIONS &amp; MILESTONES</div>
 
-      <div class="timeline-container">
+      <div class="mc-track-container">
+        <!-- Rails Graphic Backdrop -->
+        <div class="mc-rails-line"></div>
 
-        <!-- Experience: Elite Summer of Code (most recent first) -->
-        <div class="timeline-item timeline-item-left reveal reveal-left">
-          <div class="timeline-node"></div>
-          <div class="timeline-card glass-card">
-            <span class="timeline-date">July 2026 – Present</span>
-            <h3 class="timeline-role">Open Source Lead Contributor</h3>
-            <span class="timeline-company">Elite Summer of Code</span>
-            <p class="timeline-desc">
+        <!-- Node 1: Elite Summer of Code -->
+        <div class="mc-track-item reveal reveal-left">
+          <div class="mc-track-node">
+            <span class="mc-node-icon">🛤️</span>
+          </div>
+          <div class="mc-panel mc-track-panel">
+            <div class="mc-track-meta">
+              <span class="mc-track-date">July 2026 – Present</span>
+              <span class="mc-track-badge">LEAD ROLE</span>
+            </div>
+            <h3 class="mc-track-role">Open Source Lead Contributor</h3>
+            <div class="mc-track-company">Elite Summer of Code</div>
+            <p class="mc-track-desc">
               Guiding incoming contributors on structural engineering practices. Conducting pull request reviews, validating data-science scripts, and leading architectural layouts for analytic modules.
             </p>
           </div>
         </div>
 
-        <!-- Experience: GirlScript + Nexus (overlapping period) -->
-        <div class="timeline-item timeline-item-right reveal reveal-right">
-          <div class="timeline-node"></div>
-          <div class="timeline-card glass-card">
-            <span class="timeline-date">April 2026 – July 2026</span>
-            <h3 class="timeline-role">Open Source Contributor</h3>
-            <span class="timeline-company">Girlscript Summer of Code</span>
-            <p class="timeline-desc">
+        <!-- Node 2: GirlScript Summer of Code -->
+        <div class="mc-track-item reveal reveal-right">
+          <div class="mc-track-node">
+            <span class="mc-node-icon">🛤️</span>
+          </div>
+          <div class="mc-panel mc-track-panel">
+            <div class="mc-track-meta">
+              <span class="mc-track-date">April 2026 – July 2026</span>
+            </div>
+            <h3 class="mc-track-role">Open Source Contributor</h3>
+            <div class="mc-track-company">GirlScript Summer of Code</div>
+            <p class="mc-track-desc">
               Maintained data visualization components in React/Python dashboards. Built dynamic graphing utilities and resolved complex Git merge conflicts on high-traffic open repositories.
             </p>
           </div>
         </div>
 
-        <div class="timeline-item timeline-item-left reveal reveal-left">
-          <div class="timeline-node"></div>
-          <div class="timeline-card glass-card">
-            <span class="timeline-date">April 2026 – July 2026</span>
-            <h3 class="timeline-role">Open Source Contributor</h3>
-            <span class="timeline-company">Nexus Spring of Code</span>
-            <p class="timeline-desc">
+        <!-- Node 3: Nexus Spring of Code -->
+        <div class="mc-track-item reveal reveal-left">
+          <div class="mc-track-node">
+            <span class="mc-node-icon">🛤️</span>
+          </div>
+          <div class="mc-panel mc-track-panel">
+            <div class="mc-track-meta">
+              <span class="mc-track-date">April 2026 – July 2026</span>
+            </div>
+            <h3 class="mc-track-role">Open Source Contributor</h3>
+            <div class="mc-track-company">Nexus Spring of Code</div>
+            <p class="mc-track-desc">
               Engineered backend analytics structures. Worked with database normalization models in Oracle SQL and MySQL, executing optimized querying schemas for rapid data aggregation.
             </p>
           </div>
         </div>
 
-        <!-- Experience: Elite Coders WoC -->
-        <div class="timeline-item timeline-item-right reveal reveal-right">
-          <div class="timeline-node"></div>
-          <div class="timeline-card glass-card">
-            <span class="timeline-date">Jan 2026 – March 2026</span>
-            <h3 class="timeline-role">Open Source Contributor</h3>
-            <span class="timeline-company">Elite Coders Winter of Code</span>
-            <p class="timeline-desc">
+        <!-- Node 4: Elite Coders Winter of Code -->
+        <div class="mc-track-item reveal reveal-right">
+          <div class="mc-track-node">
+            <span class="mc-node-icon">🛤️</span>
+          </div>
+          <div class="mc-panel mc-track-panel">
+            <div class="mc-track-meta">
+              <span class="mc-track-date">Jan 2026 – March 2026</span>
+            </div>
+            <h3 class="mc-track-role">Open Source Contributor</h3>
+            <div class="mc-track-company">Elite Coders Winter of Code</div>
+            <p class="mc-track-desc">
               Contributed to high-performance open-source libraries. Refactored structural computational algorithms in C++ and Python, increasing efficiency by processing batch matrices concurrently.
             </p>
           </div>
         </div>
 
-        <!-- Experience: Winter of Code Social -->
-        <div class="timeline-item timeline-item-left reveal reveal-left">
-          <div class="timeline-node"></div>
-          <div class="timeline-card glass-card">
-            <span class="timeline-date">Dec 2025 – Feb 2026</span>
-            <h3 class="timeline-role">Open Source Contributor</h3>
-            <span class="timeline-company">Winter of Code Social</span>
-            <p class="timeline-desc">
+        <!-- Node 5: Winter of Code Social -->
+        <div class="mc-track-item reveal reveal-left">
+          <div class="mc-track-node">
+            <span class="mc-node-icon">🛤️</span>
+          </div>
+          <div class="mc-panel mc-track-panel">
+            <div class="mc-track-meta">
+              <span class="mc-track-date">Dec 2025 – Feb 2026</span>
+            </div>
+            <h3 class="mc-track-role">Open Source Contributor</h3>
+            <div class="mc-track-company">Winter of Code Social</div>
+            <p class="mc-track-desc">
               Collaborated on social welfare software initiatives. Engineered modular Python utilities, fixed bugs in public data processing pipelines, and practiced robust version control in a team of global developers.
             </p>
           </div>
@@ -273,279 +401,420 @@
   </section>
 
   <!-- ==========================================
-       SKILLS SECTION
+       SKILLS SECTION — INVENTORY SYSTEM WITH LABELS BELOW
        ========================================== -->
-  <section class="section" id="skills">
+  <section class="mc-section" id="skills">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-eyebrow">Core Competencies</span>
-        <h2 class="section-title">Tech Stack</h2>
+      <div class="mc-section-header reveal">
+        <div class="mc-section-eyebrow"><i class="ri-briefcase-3-fill"></i> TECH STACK SLOTS</div>
+        <h2 class="mc-section-title">PLAYER INVENTORY</h2>
       </div>
 
-      <div class="skills-categories reveal">
-
-        <!-- Category 1: Programming -->
-        <div class="skill-category glass-card">
-          <div class="skill-category-label">Programming</div>
-          <div class="skill-badges">
-            <span class="skill-badge"><i class="devicon-python-plain"></i> Python</span>
-            <span class="skill-badge"><i class="devicon-cplusplus-plain"></i> C++</span>
-            <span class="skill-badge"><i class="devicon-mysql-plain"></i> SQL</span>
-          </div>
+      <div class="mc-inventory-window reveal">
+        <div class="mc-inventory-header">
+          <span class="mc-inv-title">CRAFTING &amp; EQUIPMENT INVENTORY</span>
+          <span class="mc-inv-hint">Hover or tap items for detailed stats</span>
         </div>
 
-        <!-- Category 2: Data Science & ML -->
-        <div class="skill-category glass-card">
-          <div class="skill-category-label">Data Science &amp; ML</div>
-          <div class="skill-badges">
-            <span class="skill-badge"><i class="devicon-pandas-plain"></i> Pandas</span>
-            <span class="skill-badge"><i class="devicon-numpy-plain"></i> NumPy</span>
-            <span class="skill-badge"><i class="devicon-matplotlib-plain"></i> Matplotlib</span>
-            <span class="skill-badge"><i class="ri-bar-chart-2-fill"></i> Seaborn</span>
-            <span class="skill-badge"><i class="devicon-scikitlearn-plain"></i> Scikit-learn</span>
-          </div>
-        </div>
+        <!-- 9-Slot Hotbar Section with Skill Names Below -->
+        <div class="mc-hotbar-section">
+          <div class="mc-hotbar-label">PRIMARY HOTBAR</div>
+          <div class="mc-hotbar-slots">
 
-        <!-- Category 3: Data Analytics -->
-        <div class="skill-category glass-card">
-          <div class="skill-category-label">Data Analytics</div>
-          <div class="skill-badges">
-            <span class="skill-badge"><i class="ri-dashboard-3-fill"></i> Power BI</span>
-            <span class="skill-badge"><i class="ri-file-excel-2-fill"></i> MS Excel</span>
-            <span class="skill-badge"><i class="devicon-oracle-original"></i> Oracle SQL</span>
-          </div>
-        </div>
-
-        <!-- Category 4: Tools & Version Control -->
-        <div class="skill-category glass-card">
-          <div class="skill-category-label">Tools &amp; DevOps</div>
-          <div class="skill-badges">
-            <span class="skill-badge"><i class="devicon-git-plain"></i> Git</span>
-            <span class="skill-badge"><i class="devicon-github-original"></i> GitHub</span>
-            <span class="skill-badge"><i class="ri-flask-line"></i> Flask</span>
-            <span class="skill-badge"><i class="ri-cloud-line"></i> Render</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       CERTIFICATES SECTION
-       ========================================== -->
-  <section class="section" id="certificates">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-eyebrow">Credentials</span>
-        <h2 class="section-title">Certificates</h2>
-      </div>
-
-      <div class="certificates-grid">
-        <!-- Cert 1 -->
-        <div class="cert-card glass-card reveal reveal-delay-1">
-          <div class="cert-img-container">
-            <img src="oracle.jpeg" alt="Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate Certificate" class="cert-img">
-          </div>
-          <div class="cert-content">
-            <h3 class="cert-title">Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</h3>
-            <p class="cert-desc">Validated understanding of core artificial intelligence concepts, machine learning algorithms, deep learning neural networks, and Oracle's GenAI cloud capabilities.</p>
-            <a href="oracle.jpeg" class="btn btn-secondary cert-btn">View Certificate <i class="ri-external-link-line btn-icon"></i></a>
-          </div>
-        </div>
-
-        <!-- Cert 2 -->
-        <div class="cert-card glass-card reveal reveal-delay-2">
-          <div class="cert-img-container">
-            <img src="Nexus.png" alt="Nexus Spring of Code Certificate" class="cert-img">
-          </div>
-          <div class="cert-content">
-            <h3 class="cert-title">Nexus Spring of Code</h3>
-            <p class="cert-desc">Recognized for contribution milestones across several open source projects, highlighting mastery of Git pipelines and collaborative Python programming.</p>
-            <a href="Nexus.png" class="btn btn-secondary cert-btn">View Certificate <i class="ri-external-link-line btn-icon"></i></a>
-          </div>
-        </div>
-
-        <!-- Cert 3 -->
-        <div class="cert-card glass-card reveal reveal-delay-3">
-          <div class="cert-img-container">
-            <img src="Winter.png" alt="Winter of Code Social Certificate" class="cert-img">
-          </div>
-          <div class="cert-content">
-            <h3 class="cert-title">Winter of Code Social Certificate</h3>
-            <p class="cert-desc">Awarded for active coding contributions in social impact repository environments, debugging analytics tools, and deploying clean code.</p>
-            <a href="Winter.png" class="btn btn-secondary cert-btn">View Certificate <i class="ri-external-link-line btn-icon"></i></a>
-          </div>
-        </div>
-
-        <!-- Cert 4 -->
-        <div class="cert-card glass-card reveal reveal-delay-1">
-          <div class="cert-img-container">
-            <img src="Elite coders.png" alt="Elite Coders Winter of Code Certificate" class="cert-img">
-          </div>
-          <div class="cert-content">
-            <h3 class="cert-title">Elite Coders Winter of Code</h3>
-            <p class="cert-desc">Completed challenging algorithm optimizations, refactoring complex structural software in a high-intensity collaborative coding environment.</p>
-            <a href="Elite coders.png" class="btn btn-secondary cert-btn">View Certificate <i class="ri-external-link-line btn-icon"></i></a>
-          </div>
-        </div>
-
-        <!-- Cert 5 -->
-        <div class="cert-card glass-card reveal reveal-delay-2">
-          <div class="cert-img-container">
-            <img src="CWD.png" alt="The Ultimate Job Ready Data Science Course Certificate" class="cert-img">
-          </div>
-          <div class="cert-content">
-            <h3 class="cert-title">The Ultimate Job Ready Data Science Course</h3>
-            <p class="cert-desc">Comprehensive training covering end-to-end data cleaning, SQL modeling, statistical hypothesis testing, machine learning pipelines, and dashboard deployments.</p>
-            <a href="CWD.png" class="btn btn-secondary cert-btn">View Certificate <i class="ri-external-link-line btn-icon"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       PROJECTS SECTION
-       ========================================== -->
-  <section class="section" id="projects">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-eyebrow">Showcase</span>
-        <h2 class="section-title">Featured Projects</h2>
-      </div>
-
-      <!-- BangaBites Featured Project -->
-      <div class="project-card glass-card featured-project reveal" id="bangabites">
-        <div class="featured-project-badge"><i class="ri-rocket-2-fill"></i> Featured Project</div>
-        <div class="featured-project-inner">
-
-          <!-- Left: Content -->
-          <div class="featured-project-content">
-            <div class="featured-project-meta">
-              <span class="project-tag featured-tag">ML Recommendation System</span>
-              <span class="project-tag featured-tag">Flask REST API</span>
-              <span class="project-tag featured-tag">Bengaluru-focused</span>
-              <span class="project-tag featured-tag featured-tag--deployed"><i class="ri-global-line"></i> Deployed</span>
+            <!-- Slot 1: Python -->
+            <div class="mc-skill-item">
+              <div class="mc-slot" data-slot="1" data-title="Python" data-category="Programming Language" data-desc="Primary language for Data Science, Machine Learning & Automation." data-tools="Pandas, NumPy, Scikit-learn, Flask" data-prof="95%">
+                <span class="mc-slot-number">1</span>
+                <i class="devicon-python-plain mc-slot-icon python-color"></i>
+                <span class="mc-item-count">64</span>
+              </div>
+              <span class="mc-slot-label-text">Python</span>
             </div>
-            <h3 class="project-title featured-project-title">BangaBites</h3>
-            <p class="featured-project-subtitle">Smart Restaurant Recommendation System for Bengaluru</p>
-            <p class="project-desc">
+
+            <!-- Slot 2: SQL -->
+            <div class="mc-skill-item">
+              <div class="mc-slot" data-slot="2" data-title="SQL & Database Querying" data-category="Database Language" data-desc="Relational querying, schema modeling, data extraction & transformations." data-tools="MySQL, Oracle SQL" data-prof="90%">
+                <span class="mc-slot-number">2</span>
+                <i class="devicon-mysql-plain mc-slot-icon sql-color"></i>
+                <span class="mc-item-count">64</span>
+              </div>
+              <span class="mc-slot-label-text">SQL</span>
+            </div>
+
+            <!-- Slot 3: Machine Learning -->
+            <div class="mc-skill-item">
+              <div class="mc-slot" data-slot="3" data-title="Scikit-Learn & ML" data-category="Machine Learning Framework" data-desc="Predictive algorithms, TF-IDF, Cosine Similarity & Regression pipelines." data-tools="Scikit-Learn, Regression, NetworkX" data-prof="88%">
+                <span class="mc-slot-number">3</span>
+                <i class="devicon-scikitlearn-plain mc-slot-icon ml-color"></i>
+                <span class="mc-item-count">64</span>
+              </div>
+              <span class="mc-slot-label-text">Scikit-Learn</span>
+            </div>
+
+            <!-- Slot 4: Pandas -->
+            <div class="mc-skill-item">
+              <div class="mc-slot" data-slot="4" data-title="Pandas" data-category="Data Manipulation" data-desc="DataFrame indexing, data cleaning, filtering & structural aggregations." data-tools="Python, Dataframes" data-prof="92%">
+                <span class="mc-slot-number">4</span>
+                <i class="devicon-pandas-plain mc-slot-icon pandas-color"></i>
+                <span class="mc-item-count">64</span>
+              </div>
+              <span class="mc-slot-label-text">Pandas</span>
+            </div>
+
+            <!-- Slot 5: NumPy -->
+            <div class="mc-skill-item">
+              <div class="mc-slot" data-slot="5" data-title="NumPy" data-category="Numerical Computing" data-desc="Vectorized array calculations, matrix math & numeric pipelines." data-tools="Matrices, Numeric Python" data-prof="90%">
+                <span class="mc-slot-number">5</span>
+                <i class="devicon-numpy-plain mc-slot-icon numpy-color"></i>
+                <span class="mc-item-count">64</span>
+              </div>
+              <span class="mc-slot-label-text">NumPy</span>
+            </div>
+
+            <!-- Slot 6: Power BI -->
+            <div class="mc-skill-item">
+              <div class="mc-slot" data-slot="6" data-title="Power BI" data-category="Business Intelligence" data-desc="Interactive business dashboards, KPI visual reporting & DAX measure creation." data-tools="Dashboards, Report Building" data-prof="85%">
+                <span class="mc-slot-number">6</span>
+                <i class="ri-dashboard-3-fill mc-slot-icon powerbi-color"></i>
+                <span class="mc-item-count">64</span>
+              </div>
+              <span class="mc-slot-label-text">Power BI</span>
+            </div>
+
+            <!-- Slot 7: Git -->
+            <div class="mc-skill-item">
+              <div class="mc-slot" data-slot="7" data-title="Git & GitHub" data-category="Version Control" data-desc="Branching strategies, conflict resolution, PR workflows & code maintenance." data-tools="Git CLI, GitHub Actions" data-prof="90%">
+                <span class="mc-slot-number">7</span>
+                <i class="devicon-git-plain mc-slot-icon git-color"></i>
+                <span class="mc-item-count">64</span>
+              </div>
+              <span class="mc-slot-label-text">Git &amp; GitHub</span>
+            </div>
+
+            <!-- Slot 8: Flask -->
+            <div class="mc-skill-item">
+              <div class="mc-slot" data-slot="8" data-title="Flask" data-category="Python Microframework" data-desc="REST API deployment, web routing & backend recommendation integration." data-tools="REST APIs, Render Deployment" data-prof="85%">
+                <span class="mc-slot-number">8</span>
+                <i class="ri-flask-line mc-slot-icon flask-color"></i>
+                <span class="mc-item-count">64</span>
+              </div>
+              <span class="mc-slot-label-text">Flask</span>
+            </div>
+
+            <!-- Slot 9: C++ -->
+            <div class="mc-skill-item">
+              <div class="mc-slot" data-slot="9" data-title="C++" data-category="Systems Programming" data-desc="High-performance algorithms, batch computation & memory management." data-tools="Data Structures & Algorithms" data-prof="82%">
+                <span class="mc-slot-number">9</span>
+                <i class="devicon-cplusplus-plain mc-slot-icon cpp-color"></i>
+                <span class="mc-item-count">64</span>
+              </div>
+              <span class="mc-slot-label-text">C++</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Main Storage Inventory Slots Grid with Labels Below -->
+        <div class="mc-main-inv-section">
+          <div class="mc-hotbar-label">STORAGE SLOTS</div>
+          <div class="mc-grid-slots">
+
+            <div class="mc-skill-item">
+              <div class="mc-slot" data-title="Matplotlib" data-category="Data Visualization" data-desc="Static & custom statistical charts." data-tools="Python Plotting" data-prof="88%">
+                <i class="devicon-matplotlib-plain mc-slot-icon"></i>
+              </div>
+              <span class="mc-slot-label-text">Matplotlib</span>
+            </div>
+
+            <div class="mc-skill-item">
+              <div class="mc-slot" data-title="Seaborn" data-category="Statistical Graphics" data-desc="Advanced statistical heatmaps & distribution graphs." data-tools="Seaborn Visuals" data-prof="85%">
+                <i class="ri-bar-chart-2-fill mc-slot-icon"></i>
+              </div>
+              <span class="mc-slot-label-text">Seaborn</span>
+            </div>
+
+            <div class="mc-skill-item">
+              <div class="mc-slot" data-title="MS Excel" data-category="Data Analytics" data-desc="Pivot tables, formulas, VLOOKUP & analytical summaries." data-tools="Spreadsheets" data-prof="88%">
+                <i class="ri-file-excel-2-fill mc-slot-icon excel-color"></i>
+              </div>
+              <span class="mc-slot-label-text">MS Excel</span>
+            </div>
+
+            <div class="mc-skill-item">
+              <div class="mc-slot" data-title="Oracle SQL" data-category="Enterprise RDBMS" data-desc="Database normalization models & optimized querying." data-tools="Oracle Database" data-prof="84%">
+                <i class="devicon-oracle-original mc-slot-icon oracle-color"></i>
+              </div>
+              <span class="mc-slot-label-text">Oracle SQL</span>
+            </div>
+
+            <div class="mc-skill-item">
+              <div class="mc-slot" data-title="Render Cloud" data-category="Cloud Deployment" data-desc="Web application hosting & continuous deployment." data-tools="PaaS Deployment" data-prof="82%">
+                <i class="ri-cloud-line mc-slot-icon"></i>
+              </div>
+              <span class="mc-slot-label-text">Render</span>
+            </div>
+
+            <div class="mc-skill-item">
+              <div class="mc-slot" data-title="Data Cleaning" data-category="Data Engineering" data-desc="Handling missing values, outlier detection & preprocessing." data-tools="EDA Pipeline" data-prof="92%">
+                <i class="ri-magic-line mc-slot-icon"></i>
+              </div>
+              <span class="mc-slot-label-text">Data Cleaning</span>
+            </div>
+
+            <div class="mc-skill-item">
+              <div class="mc-slot" data-title="Exploratory Data Analysis" data-category="Analytical Science" data-desc="Pattern discovery, hypothesis testing & data insights." data-tools="Exploratory Analysis" data-prof="94%">
+                <i class="ri-search-eye-line mc-slot-icon"></i>
+              </div>
+              <span class="mc-slot-label-text">EDA</span>
+            </div>
+
+            <div class="mc-skill-item">
+              <div class="mc-slot" data-title="Open Source" data-category="Collaboration" data-desc="Remote teamwork, code reviews & community contributions." data-tools="GSoC/CWoC/NSoC" data-prof="95%">
+                <i class="ri-global-line mc-slot-icon"></i>
+              </div>
+              <span class="mc-slot-label-text">Open Source</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CERTIFICATES SECTION — ENCHANTED CREDENTIALS
+       ========================================== -->
+  <section class="mc-section mc-section-dark" id="certificates">
+    <div class="container">
+      <div class="mc-section-header reveal">
+        <div class="mc-section-eyebrow"><i class="ri-award-fill"></i> ENCHANTED CREDENTIALS</div>
+        <h2 class="mc-section-title">CERTIFICATES &amp; ADVANCEMENTS</h2>
+      </div>
+
+      <div class="mc-certs-grid">
+
+        <!-- Cert 1: Oracle -->
+        <div class="mc-cert-card reveal reveal-delay-1">
+          <div class="mc-cert-frame">
+            <img src="oracle.jpeg" alt="Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate" class="mc-cert-img" loading="lazy">
+            <div class="mc-cert-enchant-glow"></div>
+          </div>
+          <div class="mc-cert-info">
+            <span class="mc-cert-tag">ORACLE CERTIFIED</span>
+            <h3 class="mc-cert-title">Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</h3>
+            <p class="mc-cert-desc">Validated understanding of core artificial intelligence concepts, machine learning algorithms, deep learning neural networks, and Oracle's GenAI cloud capabilities.</p>
+            <a href="oracle.jpeg" target="_blank" class="mc-btn mc-btn-sm mc-btn-gold">View Scroll <i class="ri-external-link-line"></i></a>
+          </div>
+        </div>
+
+        <!-- Cert 2: Nexus -->
+        <div class="mc-cert-card reveal reveal-delay-2">
+          <div class="mc-cert-frame">
+            <img src="Nexus.png" alt="Nexus Spring of Code Certificate" class="mc-cert-img" loading="lazy">
+            <div class="mc-cert-enchant-glow"></div>
+          </div>
+          <div class="mc-cert-info">
+            <span class="mc-cert-tag">OPEN SOURCE</span>
+            <h3 class="mc-cert-title">Nexus Spring of Code</h3>
+            <p class="mc-cert-desc">Recognized for contribution milestones across several open source projects, highlighting mastery of Git pipelines and collaborative Python programming.</p>
+            <a href="Nexus.png" target="_blank" class="mc-btn mc-btn-sm mc-btn-gold">View Scroll <i class="ri-external-link-line"></i></a>
+          </div>
+        </div>
+
+        <!-- Cert 3: Winter of Code -->
+        <div class="mc-cert-card reveal reveal-delay-3">
+          <div class="mc-cert-frame">
+            <img src="Winter.png" alt="Winter of Code Social Certificate" class="mc-cert-img" loading="lazy">
+            <div class="mc-cert-enchant-glow"></div>
+          </div>
+          <div class="mc-cert-info">
+            <span class="mc-cert-tag">OPEN SOURCE</span>
+            <h3 class="mc-cert-title">Winter of Code Social Certificate</h3>
+            <p class="mc-cert-desc">Awarded for active coding contributions in social impact repository environments, debugging analytics tools, and deploying clean code.</p>
+            <a href="Winter.png" target="_blank" class="mc-btn mc-btn-sm mc-btn-gold">View Scroll <i class="ri-external-link-line"></i></a>
+          </div>
+        </div>
+
+        <!-- Cert 4: Elite Coders -->
+        <div class="mc-cert-card reveal reveal-delay-1">
+          <div class="mc-cert-frame">
+            <img src="Elite coders.png" alt="Elite Coders Winter of Code Certificate" class="mc-cert-img" loading="lazy">
+            <div class="mc-cert-enchant-glow"></div>
+          </div>
+          <div class="mc-cert-info">
+            <span class="mc-cert-tag">OPEN SOURCE</span>
+            <h3 class="mc-cert-title">Elite Coders Winter of Code</h3>
+            <p class="mc-cert-desc">Completed challenging algorithm optimizations, refactoring complex structural software in a high-intensity collaborative coding environment.</p>
+            <a href="Elite coders.png" target="_blank" class="mc-btn mc-btn-sm mc-btn-gold">View Scroll <i class="ri-external-link-line"></i></a>
+          </div>
+        </div>
+
+        <!-- Cert 5: CWD Data Science -->
+        <div class="mc-cert-card reveal reveal-delay-2">
+          <div class="mc-cert-frame">
+            <img src="CWD.png" alt="The Ultimate Job Ready Data Science Course Certificate" class="mc-cert-img" loading="lazy">
+            <div class="mc-cert-enchant-glow"></div>
+          </div>
+          <div class="mc-cert-info">
+            <span class="mc-cert-tag">DATA SCIENCE CERTIFICATE</span>
+            <h3 class="mc-cert-title">The Ultimate Job Ready Data Science Course</h3>
+            <p class="mc-cert-desc">Comprehensive training covering end-to-end data cleaning, SQL modeling, statistical hypothesis testing, machine learning pipelines, and dashboard deployments.</p>
+            <a href="CWD.png" target="_blank" class="mc-btn mc-btn-sm mc-btn-gold">View Scroll <i class="ri-external-link-line"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       PROJECTS SECTION — CHEST LOOT SYSTEM
+       ========================================== -->
+  <section class="mc-section" id="projects">
+    <div class="container">
+      <div class="mc-section-header reveal">
+        <div class="mc-section-eyebrow"><i class="ri-archive-stack-fill"></i> LOOT CONTAINERS</div>
+        <h2 class="mc-section-title">PROJECT CHESTS</h2>
+      </div>
+
+      <!-- FEATURED DIAMOND CHEST: BangaBites -->
+      <div class="mc-project-chest-featured reveal" id="bangabites">
+        <div class="mc-chest-badge"><i class="ri-sparkling-fill"></i> FEATURED DIAMOND CHEST</div>
+
+        <div class="mc-chest-featured-grid">
+          <!-- Left: Chest Visual -->
+          <div class="mc-chest-visual-box">
+            <div class="mc-chest-graphic mc-diamond-chest">
+              <div class="mc-chest-lid"></div>
+              <div class="mc-chest-body"></div>
+              <div class="mc-chest-lock"></div>
+            </div>
+            <div class="mc-loot-beam"></div>
+          </div>
+
+          <!-- Right: Info -->
+          <div class="mc-chest-featured-info">
+            <div class="mc-tags-row">
+              <span class="mc-tag mc-tag-cyan">ML Recommendation</span>
+              <span class="mc-tag mc-tag-cyan">Flask REST API</span>
+              <span class="mc-tag mc-tag-green"><i class="ri-global-line"></i> Deployed</span>
+            </div>
+
+            <h3 class="mc-project-title">BangaBites</h3>
+            <p class="mc-project-subtitle">Smart Restaurant Recommendation System for Bengaluru</p>
+
+            <p class="mc-project-desc">
               BangaBites is a deployed content-based restaurant recommendation system focused on Bengaluru restaurants. It recommends restaurants similar to a user's selected restaurant using TF-IDF and Cosine Similarity, while also considering weighted rating, popularity, and budget compatibility.
             </p>
-            <ul class="featured-project-features">
-              <li><i class="ri-checkbox-circle-fill"></i> Content-based recommendations with TF-IDF &amp; Cosine Similarity</li>
-              <li><i class="ri-checkbox-circle-fill"></i> Weighted ratings, popularity &amp; budget scoring</li>
-              <li><i class="ri-checkbox-circle-fill"></i> Location filtering, minimum rating &amp; max budget controls</li>
-              <li><i class="ri-checkbox-circle-fill"></i> Zomato restaurant links &amp; responsive web interface</li>
-              <li><i class="ri-checkbox-circle-fill"></i> Cloud-deployed Flask REST API on Render</li>
-            </ul>
-            <p class="featured-project-ai-note">
-              <i class="ri-sparkling-fill"></i>
-              <em>AI-assisted development was used to accelerate frontend/UI implementation and Flask integration, while the recommendation logic, data processing, scoring system and overall project architecture were designed and integrated as part of the project.</em>
-            </p>
-            <div class="project-tags" style="margin-bottom: 2rem;">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">Pandas</span>
-              <span class="project-tag">NumPy</span>
-              <span class="project-tag">Scikit-learn</span>
-              <span class="project-tag">TF-IDF</span>
-              <span class="project-tag">Cosine Similarity</span>
-              <span class="project-tag">Flask</span>
-              <span class="project-tag">HTML</span>
-              <span class="project-tag">CSS</span>
-              <span class="project-tag">JavaScript</span>
-              <span class="project-tag">Git</span>
-              <span class="project-tag">Render</span>
+
+            <div class="mc-project-features-mini">
+              <span><i class="ri-checkbox-circle-fill"></i> TF-IDF &amp; Cosine Similarity engine</span>
+              <span><i class="ri-checkbox-circle-fill"></i> Weighted rating &amp; budget scoring</span>
+              <span><i class="ri-checkbox-circle-fill"></i> Cloud-deployed Flask REST API on Render</span>
             </div>
-            <div class="project-actions">
-              <a href="https://bangabites.ankitpardeshi.xyz/" target="_blank" rel="noopener noreferrer" class="btn btn-primary project-btn">Live Demo <i class="ri-external-link-line btn-icon"></i></a>
-              <a href="https://github.com/Ankitpardeshiii/BangaBites" target="_blank" rel="noopener noreferrer" class="btn btn-secondary project-btn">GitHub <i class="ri-github-fill btn-icon"></i></a>
+
+            <div class="mc-chest-actions">
+              <button class="mc-btn mc-btn-primary mc-open-modal-btn" data-project="bangabites">
+                <i class="ri-archive-line"></i> OPEN CHEST DETAILS
+              </button>
+              <a href="https://bangabites.onrender.com/" target="_blank" class="mc-btn mc-btn-gold">
+                <i class="ri-external-link-line"></i> LIVE DEMO
+              </a>
+              <a href="https://github.com/Ankitpardeshiii/BangaBites" target="_blank" class="mc-btn mc-btn-dark">
+                <i class="ri-github-fill"></i> GITHUB
+              </a>
             </div>
           </div>
-
-          <!-- Right: Visual -->
-          <div class="featured-project-visual">
-            <div class="featured-project-glow"></div>
-            <div class="featured-project-icon-card glass-card">
-              <i class="ri-restaurant-2-fill featured-icon-main"></i>
-              <div class="featured-icon-grid">
-                <div class="featured-icon-chip"><i class="ri-brain-fill"></i><span>ML Model</span></div>
-                <div class="featured-icon-chip"><i class="ri-server-line"></i><span>Flask API</span></div>
-                <div class="featured-icon-chip"><i class="ri-map-pin-2-fill"></i><span>Bengaluru</span></div>
-                <div class="featured-icon-chip"><i class="ri-cloud-fill"></i><span>Deployed</span></div>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
 
-      <!-- Other Projects Grid -->
-      <div class="projects-grid">
+      <!-- OTHER PROJECT CHESTS GRID -->
+      <div class="mc-chests-grid">
 
-        <!-- Project 1: Behind The Feed -->
-        <div class="project-card glass-card reveal">
-          <div class="project-img-container">
-            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&auto=format&fit=crop&q=60" alt="Behind The Feed — Instagram Data Analysis Project" class="project-img">
-          </div>
-          <div class="project-content">
-            <span class="project-number">01 — Data Analysis</span>
-            <h3 class="project-title">Behind The Feed</h3>
-            <p class="project-desc">A hands-on Instagram data analysis project that collects, cleans, and analyzes raw user data to extract insights on engagement trends, posting frequency, and user behavior.</p>
-            <div class="project-tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">Pandas</span>
-              <span class="project-tag">Matplotlib</span>
-              <span class="project-tag">Seaborn</span>
+        <!-- Chest 1: Behind The Feed -->
+        <div class="mc-chest-card reveal reveal-delay-1" data-project="behindthefeed">
+          <div class="mc-chest-icon-area">
+            <div class="mc-chest-graphic mc-gold-chest">
+              <div class="mc-chest-lid"></div>
+              <div class="mc-chest-body"></div>
+              <div class="mc-chest-lock"></div>
             </div>
-            <div class="project-actions">
-              <a href="https://github.com/Ankitpardeshiii/Behind-the-feed" target="_blank" rel="noopener noreferrer" class="btn btn-secondary project-btn">GitHub <i class="ri-github-fill btn-icon"></i></a>
-              <a href="https://github.com/Ankitpardeshiii/Behind-the-feed" target="_blank" rel="noopener noreferrer" class="btn btn-primary project-btn">View <i class="ri-external-link-line btn-icon"></i></a>
+          </div>
+          <div class="mc-chest-card-content">
+            <span class="mc-project-num">01 — DATA ANALYSIS</span>
+            <h3 class="mc-project-card-title">Behind The Feed</h3>
+            <p class="mc-project-card-desc">A hands-on Instagram data analysis project that collects, cleans, and analyzes raw user data to extract insights on engagement trends and posting frequency.</p>
+            <div class="mc-card-tags">
+              <span class="mc-tag">Python</span>
+              <span class="mc-tag">Pandas</span>
+              <span class="mc-tag">Matplotlib</span>
+            </div>
+            <div class="mc-card-actions">
+              <button class="mc-btn mc-btn-sm mc-btn-primary mc-open-modal-btn" data-project="behindthefeed">
+                <i class="ri-archive-line"></i> OPEN CHEST
+              </button>
+              <a href="https://github.com/Ankitpardeshiii/Behind-the-feed" target="_blank" class="mc-btn mc-btn-sm mc-btn-dark">
+                <i class="ri-github-fill"></i> REPO
+              </a>
             </div>
           </div>
         </div>
 
-        <!-- Project 2: Friend to Feature -->
-        <div class="project-card glass-card reveal reveal-delay-1">
-          <div class="project-img-container">
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&auto=format&fit=crop&q=60" alt="Friend to Feature — Social Network Recommendation Project" class="project-img">
-          </div>
-          <div class="project-content">
-            <span class="project-number">02 — ML / Graphs</span>
-            <h3 class="project-title">Friend to Feature</h3>
-            <p class="project-desc">What connects people beyond friendships? From Friends to Features explores social links and shared interests to identify potential connections and page recommendations through data analysis.</p>
-            <div class="project-tags">
-              <span class="project-tag">Scikit-Learn</span>
-              <span class="project-tag">NetworkX</span>
-              <span class="project-tag">Python</span>
-              <span class="project-tag">NumPy</span>
+        <!-- Chest 2: Friend to Feature -->
+        <div class="mc-chest-card reveal reveal-delay-2" data-project="friendtofeature">
+          <div class="mc-chest-icon-area">
+            <div class="mc-chest-graphic mc-gold-chest">
+              <div class="mc-chest-lid"></div>
+              <div class="mc-chest-body"></div>
+              <div class="mc-chest-lock"></div>
             </div>
-            <div class="project-actions">
-              <a href="https://github.com/Ankitpardeshiii/Friends-to-feature" target="_blank" rel="noopener noreferrer" class="btn btn-secondary project-btn">GitHub <i class="ri-github-fill btn-icon"></i></a>
-              <a href="https://github.com/Ankitpardeshiii/Friends-to-feature" target="_blank" rel="noopener noreferrer" class="btn btn-primary project-btn">View <i class="ri-external-link-line btn-icon"></i></a>
+          </div>
+          <div class="mc-chest-card-content">
+            <span class="mc-project-num">02 — ML / GRAPHS</span>
+            <h3 class="mc-project-card-title">Friend to Feature</h3>
+            <p class="mc-project-card-desc">Explores social links and shared interests to identify potential connections and page recommendations through network graph analysis.</p>
+            <div class="mc-card-tags">
+              <span class="mc-tag">Scikit-Learn</span>
+              <span class="mc-tag">NetworkX</span>
+              <span class="mc-tag">Python</span>
+            </div>
+            <div class="mc-card-actions">
+              <button class="mc-btn mc-btn-sm mc-btn-primary mc-open-modal-btn" data-project="friendtofeature">
+                <i class="ri-archive-line"></i> OPEN CHEST
+              </button>
+              <a href="https://github.com/Ankitpardeshiii/Friends-to-feature" target="_blank" class="mc-btn mc-btn-sm mc-btn-dark">
+                <i class="ri-github-fill"></i> REPO
+              </a>
             </div>
           </div>
         </div>
 
-        <!-- Project 3: Data Before Doors -->
-        <div class="project-card glass-card reveal reveal-delay-2">
-          <div class="project-img-container">
-            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&auto=format&fit=crop&q=60" alt="Data Before Doors — House Price Prediction Model" class="project-img">
-          </div>
-          <div class="project-content">
-            <span class="project-number">03 — Predictive ML</span>
-            <h3 class="project-title">Data Before Doors</h3>
-            <p class="project-desc">A real-time house price prediction model using machine learning, incorporating regression models, feature selection, and validation algorithms for accurate property valuation.</p>
-            <div class="project-tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">Sklearn</span>
-              <span class="project-tag">Regression</span>
-              <span class="project-tag">Pandas</span>
+        <!-- Chest 3: Data Before Doors -->
+        <div class="mc-chest-card reveal reveal-delay-3" data-project="databeforedoors">
+          <div class="mc-chest-icon-area">
+            <div class="mc-chest-graphic mc-gold-chest">
+              <div class="mc-chest-lid"></div>
+              <div class="mc-chest-body"></div>
+              <div class="mc-chest-lock"></div>
             </div>
-            <div class="project-actions">
-              <a href="https://github.com/Ankitpardeshiii/Data-Before-Doors" target="_blank" rel="noopener noreferrer" class="btn btn-secondary project-btn">GitHub <i class="ri-github-fill btn-icon"></i></a>
-              <a href="https://github.com/Ankitpardeshiii/Data-Before-Doors" target="_blank" rel="noopener noreferrer" class="btn btn-primary project-btn">View <i class="ri-external-link-line btn-icon"></i></a>
+          </div>
+          <div class="mc-chest-card-content">
+            <span class="mc-project-num">03 — PREDICTIVE ML</span>
+            <h3 class="mc-project-card-title">Data Before Doors</h3>
+            <p class="mc-project-card-desc">Real-time house price prediction model using machine learning, regression models, feature selection, and validation algorithms for property valuation.</p>
+            <div class="mc-card-tags">
+              <span class="mc-tag">Python</span>
+              <span class="mc-tag">Sklearn</span>
+              <span class="mc-tag">Regression</span>
+            </div>
+            <div class="mc-card-actions">
+              <button class="mc-btn mc-btn-sm mc-btn-primary mc-open-modal-btn" data-project="databeforedoors">
+                <i class="ri-archive-line"></i> OPEN CHEST
+              </button>
+              <a href="https://github.com/Ankitpardeshiii/Data-Before-Doors" target="_blank" class="mc-btn mc-btn-sm mc-btn-dark">
+                <i class="ri-github-fill"></i> REPO
+              </a>
             </div>
           </div>
         </div>
@@ -555,99 +824,99 @@
   </section>
 
   <!-- ==========================================
-       CONTACT SECTION
+       CONTACT SECTION — VILLAGER TRADER & GOLEM SCENERY
        ========================================== -->
-  <section class="section" id="contact">
+  <section class="mc-section mc-section-dark mc-section-golem" id="contact">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-eyebrow">Get In Touch</span>
-        <h2 class="section-title">Contact Me</h2>
+      <div class="mc-section-header reveal">
+        <div class="mc-section-eyebrow"><i class="ri-message-2-fill"></i> TRADER NPC &amp; QUESTS</div>
+        <h2 class="mc-section-title">CONTACT VILLAGER</h2>
       </div>
 
-      <div class="contact-grid">
-        <!-- Contact Info -->
-        <div class="contact-info reveal reveal-left">
-          <h3 class="contact-info-title">Let's discuss your <span>next project</span></h3>
-          <p class="contact-info-desc">
-            Have a question or looking to collaborate? Connect with me via my professional channels or drop a message. I'm always open to discussing data science roles, open source projects, and internship opportunities.
-          </p>
+      <div class="mc-contact-grid">
+        <!-- Left: Villager Trader NPC Box -->
+        <div class="mc-panel mc-villager-panel reveal reveal-left">
+          <div class="mc-villager-header">
+            <div class="mc-villager-avatar">🧑‍🌾</div>
+            <div class="mc-villager-speech">
+              <span class="mc-villager-name">VILLAGER TRADER ANKIT</span>
+              <p class="mc-villager-text">"Hrmm! Looking to trade data science ideas, discuss open-source roles, or build intelligent AI systems together?"</p>
+            </div>
+          </div>
 
-          <div class="contact-list">
-            <!-- Email -->
-            <div class="contact-item">
-              <div class="contact-icon-box glass-card">
-                <i class="ri-mail-send-line" style="color: var(--accent);"></i>
-              </div>
-              <div class="contact-details">
-                <span class="contact-label">Email</span>
-                <a href="mailto:ankitpardeshi2025@gmail.com" class="contact-link">ankitpardeshi2025@gmail.com</a>
+          <div class="mc-trade-items">
+            <div class="mc-trade-slot">
+              <div class="mc-slot"><i class="ri-mail-send-fill text-gold"></i></div>
+              <div class="mc-trade-info">
+                <span class="mc-trade-label">EMAIL ADDRESS</span>
+                <a href="mailto:ankitpardeshi2025@gmail.com" class="mc-trade-link">ankitpardeshi2025@gmail.com</a>
               </div>
             </div>
 
-            <!-- LinkedIn -->
-            <div class="contact-item">
-              <div class="contact-icon-box glass-card">
-                <i class="ri-linkedin-box-fill" style="color: var(--accent);"></i>
-              </div>
-              <div class="contact-details">
-                <span class="contact-label">LinkedIn</span>
-                <a href="https://www.linkedin.com/in/ankitpardeshi05" target="_blank" rel="noopener noreferrer" class="contact-link">ankitpardeshi05</a>
+            <div class="mc-trade-slot">
+              <div class="mc-slot"><i class="ri-linkedin-box-fill text-gold"></i></div>
+              <div class="mc-trade-info">
+                <span class="mc-trade-label">LINKEDIN PROFILE</span>
+                <a href="https://www.linkedin.com/in/ankitpardeshi05" target="_blank" class="mc-trade-link">ankitpardeshi05</a>
               </div>
             </div>
 
-            <!-- GitHub -->
-            <div class="contact-item">
-              <div class="contact-icon-box glass-card">
-                <i class="ri-github-fill" style="color: var(--accent);"></i>
-              </div>
-              <div class="contact-details">
-                <span class="contact-label">GitHub</span>
-                <a href="https://github.com/Ankitpardeshiii" target="_blank" rel="noopener noreferrer" class="contact-link">Ankitpardeshiii</a>
+            <div class="mc-trade-slot">
+              <div class="mc-slot"><i class="ri-github-fill text-gold"></i></div>
+              <div class="mc-trade-info">
+                <span class="mc-trade-label">GITHUB REPOSITORIES</span>
+                <a href="https://github.com/Ankitpardeshiii" target="_blank" class="mc-trade-link">Ankitpardeshiii</a>
               </div>
             </div>
 
-            <!-- Portfolio -->
-            <div class="contact-item">
-              <div class="contact-icon-box glass-card">
-                <i class="ri-global-line" style="color: var(--accent);"></i>
-              </div>
-              <div class="contact-details">
-                <span class="contact-label">Portfolio</span>
-                <a href="https://ankitpardeshi.xyz" target="_blank" rel="noopener noreferrer" class="contact-link">ankitpardeshi.xyz</a>
+            <div class="mc-trade-slot">
+              <div class="mc-slot"><i class="ri-global-line text-gold"></i></div>
+              <div class="mc-trade-info">
+                <span class="mc-trade-label">PORTFOLIO DOMAIN</span>
+                <a href="https://ankitpardeshi.xyz" target="_blank" class="mc-trade-link">ankitpardeshi.xyz</a>
               </div>
             </div>
 
-            <!-- Instagram -->
-            <div class="contact-item">
-              <div class="contact-icon-box glass-card">
-                <i class="ri-instagram-line" style="color: var(--accent);"></i>
-              </div>
-              <div class="contact-details">
-                <span class="contact-label">Instagram</span>
-                <a href="https://www.instagram.com/ankitpardeshii" target="_blank" rel="noopener noreferrer" class="contact-link">@ankitpardeshii</a>
+            <div class="mc-trade-slot">
+              <div class="mc-slot"><i class="ri-instagram-line text-gold"></i></div>
+              <div class="mc-trade-info">
+                <span class="mc-trade-label">INSTAGRAM</span>
+                <a href="https://www.instagram.com/ankitpardeshii" target="_blank" class="mc-trade-link">@ankitpardeshii</a>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Contact Form -->
-        <div class="contact-form glass-card reveal reveal-right">
-          <form id="contactForm">
-            <div class="form-group">
-              <input type="text" id="name" name="name" class="form-input" required autocomplete="off">
-              <label for="name" class="form-label">Name</label>
+        <!-- Right: Quest Scroll Form -->
+        <div class="mc-panel mc-quest-panel reveal reveal-right">
+          <div class="mc-panel-header">
+            <span class="mc-panel-title">📜 QUEST FORM — SEND MESSAGE</span>
+            <span class="mc-panel-tag">+100 XP REWARD</span>
+          </div>
+
+          <form id="contactForm" class="mc-quest-form">
+            <div class="mc-form-group">
+              <label for="name" class="mc-form-label">YOUR NAME / CALLSIGN</label>
+              <input type="text" id="name" name="name" class="mc-form-input" placeholder="e.g. Alex" required autocomplete="off">
             </div>
-            <div class="form-group">
-              <input type="email" id="email" name="email" class="form-input" required autocomplete="off">
-              <label for="email" class="form-label">Email</label>
+
+            <div class="mc-form-group">
+              <label for="email" class="mc-form-label">YOUR EMAIL ADDRESS</label>
+              <input type="email" id="email" name="email" class="mc-form-input" placeholder="e.g. alex@gmail.com" required autocomplete="off">
             </div>
-            <div class="form-group">
-              <textarea id="message" name="message" class="form-input" required></textarea>
-              <label for="message" class="form-label">Your Message</label>
+
+            <div class="mc-form-group">
+              <label for="message" class="mc-form-label">MESSAGE DETAILS</label>
+              <textarea id="message" name="message" class="mc-form-input mc-textarea" placeholder="Tell me about your project, role, or collaboration idea..." required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message <i class="ri-send-plane-fill btn-icon"></i></button>
+
+            <button type="submit" class="mc-btn mc-btn-primary mc-btn-block">
+              <span class="mc-btn-text">SEND QUEST MESSAGE</span>
+              <i class="ri-send-plane-fill"></i>
+            </button>
           </form>
         </div>
+
       </div>
     </div>
   </section>
@@ -655,42 +924,109 @@
   <!-- ==========================================
        FOOTER
        ========================================== -->
-  <footer class="footer">
+  <footer class="mc-footer">
     <div class="container">
-      <div class="footer-brand">ANKIT<span>.</span></div>
-      <p class="footer-tagline">Data Science &amp; AI Student · Data Analyst · Open Source Contributor</p>
-      <div class="footer-socials">
-        <a href="https://github.com/Ankitpardeshiii" target="_blank" rel="noopener noreferrer" class="social-btn glass-card" aria-label="GitHub">
-          <i class="ri-github-fill"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/ankitpardeshi05" target="_blank" rel="noopener noreferrer" class="social-btn glass-card" aria-label="LinkedIn">
-          <i class="ri-linkedin-box-fill"></i>
-        </a>
-        <a href="https://ankitpardeshi.xyz" target="_blank" rel="noopener noreferrer" class="social-btn glass-card" aria-label="Portfolio Website">
-          <i class="ri-global-line"></i>
-        </a>
-        <a href="mailto:ankitpardeshi2025@gmail.com" class="social-btn glass-card" aria-label="Email">
-          <i class="ri-mail-line"></i>
-        </a>
-        <a href="https://www.instagram.com/ankitpardeshii" target="_blank" rel="noopener noreferrer" class="social-btn glass-card" aria-label="Instagram">
-          <i class="ri-instagram-line"></i>
-        </a>
+      <div class="mc-footer-box">
+        <div class="mc-footer-brand">
+          <span class="mc-block-icon">🟩</span> ANKIT PARDESHI
+        </div>
+
+        <p class="mc-footer-tagline">Data Science &amp; AI Student · Data Analyst · Open Source Contributor</p>
+
+        <div class="mc-footer-socials">
+          <a href="https://github.com/Ankitpardeshiii" target="_blank" class="mc-slot-btn" aria-label="GitHub"><i class="ri-github-fill"></i></a>
+          <a href="https://www.linkedin.com/in/ankitpardeshi05" target="_blank" class="mc-slot-btn" aria-label="LinkedIn"><i class="ri-linkedin-box-fill"></i></a>
+          <a href="https://ankitpardeshi.xyz" target="_blank" class="mc-slot-btn" aria-label="Portfolio Website"><i class="ri-global-line"></i></a>
+          <a href="mailto:ankitpardeshi2025@gmail.com" class="mc-slot-btn" aria-label="Email"><i class="ri-mail-line"></i></a>
+          <a href="https://www.instagram.com/ankitpardeshii" target="_blank" class="mc-slot-btn" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+          <!-- Easter egg secret block button -->
+          <button class="mc-slot-btn mc-easter-btn" id="easter-block-btn" title="Click secret block!"><i class="ri-emerald-fill text-gold"></i></button>
+        </div>
+
+        <div class="mc-footer-bottom">
+          <p>&copy; 2026 Ankit Pardeshi. Built with 💚 + ☕ by Ankit Pardeshi.</p>
+        </div>
       </div>
-      <p class="footer-copy">
-        &copy; 2026 Ankit Pardeshi. All rights reserved.<br>
-        <span>Designed &amp; Developed by Ankit Pardeshi</span>
-      </p>
     </div>
   </footer>
-  <!-- EmailJS -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-<script>
-emailjs.init({
-    publicKey: "U-n6L8X_610YOF3j8"
-});
-</script>
+  <!-- ==========================================
+       AMBIENT AUDIO PLAYER WIDGET
+       ========================================== -->
+  <div class="mc-audio-player-widget" id="mc-audio-widget">
+    <button class="mc-audio-toggle-btn" id="audio-toggle-btn" aria-label="Enable background music" title="Toggle Ambient Music">
+      <span class="mc-audio-icon" id="audio-btn-icon">🎵</span>
+      <span class="mc-audio-text" id="audio-btn-text">AUDIO: OFF</span>
+    </button>
+    <audio id="bg-music" loop preload="none">
+      <source src="audio/minecraft-ambient.mp3" type="audio/mpeg">
+      <source src="audio/minecraft-theme.mp3" type="audio/mpeg">
+    </audio>
+  </div>
 
-<script src="script.js"></script>
+  <!-- ==========================================
+       ITEM TOOLTIP POPUP (Fixed Floating)
+       ========================================== -->
+  <div class="mc-tooltip" id="mc-tooltip">
+    <div class="mc-tooltip-title" id="mc-tt-title">Python</div>
+    <div class="mc-tooltip-category" id="mc-tt-cat">Programming Language</div>
+    <div class="mc-tooltip-desc" id="mc-tt-desc">Primary language for Data Science & ML.</div>
+    <div class="mc-tooltip-tools" id="mc-tt-tools">Tools: Pandas, NumPy</div>
+    <div class="mc-tooltip-prof-wrap">
+      <span class="mc-tooltip-prof-label">Proficiency:</span>
+      <div class="mc-tooltip-prof-bar"><div class="mc-tooltip-prof-fill" id="mc-tt-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       PROJECT CHEST MODAL
+       ========================================== -->
+  <div class="mc-modal-backdrop" id="mc-modal-backdrop">
+    <div class="mc-modal-container">
+      <div class="mc-modal-header">
+        <div class="mc-modal-title-wrap">
+          <span class="mc-modal-icon">📦</span>
+          <h2 class="mc-modal-title" id="modal-project-title">PROJECT CHEST</h2>
+        </div>
+        <button class="mc-modal-close" id="modal-close-btn" aria-label="Close Modal">&times;</button>
+      </div>
+
+      <div class="mc-modal-body">
+        <p class="mc-modal-subtitle" id="modal-project-subtitle">Subheading</p>
+        <p class="mc-modal-desc" id="modal-project-desc">Description</p>
+
+        <!-- Features Checklist -->
+        <div class="mc-modal-section">
+          <div class="mc-modal-section-title"><i class="ri-checkbox-circle-line"></i> KEY FEATURES</div>
+          <ul class="mc-modal-features-list" id="modal-features-list"></ul>
+        </div>
+
+        <!-- AI Note (if applicable) -->
+        <div class="mc-modal-ai-note" id="modal-ai-note" style="display: none;">
+          <i class="ri-sparkling-fill"></i>
+          <span id="modal-ai-note-text"></span>
+        </div>
+
+        <!-- Tech Stack Slots -->
+        <div class="mc-modal-section">
+          <div class="mc-modal-section-title"><i class="ri-briefcase-line"></i> EQUIPMENT &amp; TECH STACK</div>
+          <div class="mc-modal-tech-slots" id="modal-tech-slots"></div>
+        </div>
+
+        <!-- Actions -->
+        <div class="mc-modal-actions">
+          <a href="#" target="_blank" class="mc-btn mc-btn-gold" id="modal-demo-btn">
+            <i class="ri-external-link-line"></i> LIVE DEMO
+          </a>
+          <a href="#" target="_blank" class="mc-btn mc-btn-primary" id="modal-github-btn">
+            <i class="ri-github-fill"></i> GITHUB REPOSITORY
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
 </body>
 </html>
