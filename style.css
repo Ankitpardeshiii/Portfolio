@@ -815,6 +815,8 @@ body.mc-body * {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.8rem;
 }
 
 .mc-cb-company {
@@ -824,17 +826,29 @@ body.mc-body * {
   text-shadow: 1px 1px 0 #000;
 }
 
+.mc-cb-location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: #bbb;
+  margin-top: 4px;
+}
+
 .mc-cb-role {
   font-family: var(--font-heading);
   font-size: 1.6rem;
   color: #fff;
+  margin-top: 2px;
 }
 
 .mc-cb-date {
-  font-family: var(--font-pixel);
-  font-size: 0.9rem;
+  font-family: var(--font-pixel-sub);
+  font-size: 0.85rem;
   color: var(--mc-gold);
   text-shadow: 1px 1px 0 #000;
+  white-space: nowrap;
 }
 
 .mc-cb-divider {
